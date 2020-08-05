@@ -1,0 +1,105 @@
+.sidenav{
+    height:100%;
+    width:160px;
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: dodgerblue;
+    overflow-x: hidden;
+    padding-top: 80px;
+    margin-top: 55px;
+}
+
+.sidenav a{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color:white;
+    display: block;
+}
+.sidenav a:hover{
+    color: black;
+}
+
+
+@media screen and (max-height:450px){
+    .sidenav{padding-top: 55px;}
+    .sidenav a {font-size: 10px;}
+}
+.form{
+    margin: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top:2%;
+    margin-bottom: 2%;
+}
+
+.center_text{
+    text-align: center;
+}
+
+.form2{
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    margin-left: 15%;
+    margin-right: 5%;
+}
+
+.center_text{
+    text-align: center !important;
+}
+
+.color_red{
+    color: crimson !important;
+}
+.color_yellow{
+    color: yellow !important;
+}
+
+.little_padding{
+    padding-left: 1% !important;
+}
+
+.form2{
+    margin: auto;
+    margin-top:10%;
+    margin-bottom: 20%;
+    margin-left: 15%;
+    margin-right: 5%;
+}
+.form_mark{
+    margin-bottom: 35%;
+    margin-left: 25%;
+    margin-right: 5%;
+}
+.dateto{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 35%;
+    margin-right:5%;
+}
+.date{
+    margin-bottom: 5% !important;
+    margin-left: 65% !important;
+}
+
+.date{
+    margin-left: 25%;
+    margin-right: 20%;
+    margin-top: 10%;
+}
+.id{
+    margin-left: 45%;
+    margin-right: 5%;
+    margin-top: 10%;
+}
+
+.form3{
+    margin: auto;
+    margin-top:4%;
+    margin-bottom: 20%;
+    margin-left: 25%;
+    margin-right: 5%;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Teacher_account.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.attendencecheckvalue').click(function(){
+                var txt="";
+                $('.attendencecheckvalue:checked').each(function(){
+                    txt+=$(this).val()+","
+                });
+                $('#attendenceallvalues').val(txt);
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="teacheraccount">Home</a>
+        <a class="navbar-brand" href="addsubject">Add Subject</a>
+        <a class="navbar-brand" href="addclass">Add Class</a>
+        <div class="navbar-nav ml-auto">
+            <a class="navbar-brand" href="logout">Logout</a>
+        </div>
+    </nav>
+    <div class="sidenav">
+        <a href="newstudent">New Student Account</a>
+        <a href="allstudent">All Student</a>
+        <a href="select">Add Attendance</a>
+    </div>
+    <div class="form_mark">
+        <form action="mark" method="POST">
+        {% csrf_token %}
+        <div class="date">
+            <label><h4>Enter Date</h4></label>
+            <input type="date" name="date" required>
+        </div>
+        <table style="width:100%">
+            <br>
+            <tr>
+            <th><b><h2>Student Id</h2></b></th>
+            <th><b><h2>Mark P/A</h2></b></th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <br/>
+                <td>
+                <h4>{{i.userid}}</h4>
+                </td>
+                <br/>
+                <td><input type="checkbox" value="{{i.userid}}" class="attendencecheckvalue" /></td>
+            </tr>
+            {% endfor %}
+            <br>
+        </table>
+        <br/>
+        <input type="text" name="attendence" id="attendenceallvalues" size="100">
+        <br/>
+        <br/>
+        <div class="center_text">
+            <button type="submit" id="but1" value="Insert Record" class="btn btn-success btn-lg">Mark</button>
+        </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
